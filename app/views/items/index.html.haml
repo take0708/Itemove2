@@ -1,0 +1,17 @@
+%body
+  %header
+    =render "header"
+
+    = link_to 'アイテム登録', new_item_path
+    %br/
+    現在登録されているアイテム一覧
+    - @items.each do | item |
+      .item
+        = link_to '削除', "/items/#{item.id}", method: :delete
+        = link_to '編集', "/items/#{item.id}/edit", method: :get
+        .item-code
+          商品コード  #{item.code}
+        .item-name
+          商品名  #{item.name}
+        .item-vol
+          数量  #{item.vol}
