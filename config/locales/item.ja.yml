@@ -1,0 +1,7 @@
+ja:
+  activerecord:
+    attributes:
+      item:
+        code: 商品コード
+        name: 名称
+        vol: 数量

@@ -1,8 +1,14 @@
+%ul
+  - @items.errors.full_messages.each do |message|
+    %li= message
 = form_for @items do |f|
-  商品コード#{f.text_field :code}
+  商品コード
+  = f.text_field :code, placeholder: '数字で入力してください'
   %br/
-  アイテム名#{f.text_field :name}
+  商品名
+  = f.text_field :name, placeholder: '商品名を入力してください'
   %br/
-  数量#{f.number_field :vol}
+  数量
+  = f.text_field :vol, placeholder: '数字で入力してください'
   %br/
   = f.submit
