@@ -10,9 +10,9 @@ class ItemsController < ApplicationController
   def create
     @items = Item.new(item_params)
     if @items.save
-      redirect_to root_path
+      redirect_to root_path, notice: 'Event was successfully created.'
     else
-      redirect_to root_path
+      render :new
     end
   end
 
